@@ -1,0 +1,25 @@
+:host ::ng-deep{
+    .mat-mdc-card-content {
+        padding: 16px;
+    }
+}
+.cardElements {
+    flex: 1 0 21%; /* explanation below */
+    margin: 8px;
+    max-width:360px;
+}
+.card-header-image {
+    background-size: cover;
+}
+.wrapper {
+    padding: 20px;
+    max-width: 400px;
+    margin: 50px auto;
+}
+  
+.wrapper-overflow {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}

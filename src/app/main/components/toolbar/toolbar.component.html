@@ -1,0 +1,29 @@
+<mat-sidenav-container>
+    <div class="container">
+        <div class="col-12">
+            <div class="toolbar-content">
+                <div class="side-left">
+                    <button *ngIf="urlBack" mat-icon-button (click)="backView()">
+                        <mat-icon>arrow_back</mat-icon>
+                    </button>
+                    <div class="breadcrub">
+                        <span class="sub-title">{{entity}}</span>
+                        <span class="title">{{title}}</span>
+                    </div>  
+                </div>
+                
+                <!-- <div class="search">
+                    <form style="font-size: 18px">
+                        <mat-form-field>
+                              <input matInput type="search" [formControl]="searchText" placeholder="Hero">
+                              <button mat-raised-button matSuffix aria-label="search" (click)="buscarHeroe()">
+                                SEARCH
+                            </button>
+                        </mat-form-field>
+                    </form>
+                </div> -->
+            </div>
+        </div>
+    </div>    
+</mat-sidenav-container>
+
