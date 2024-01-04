@@ -13,7 +13,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatDividerModule} from '@angular/material/divider';
-
+import {MatChipsModule} from '@angular/material/chips';
 @NgModule({
   declarations: [
     SharedComponent
@@ -22,23 +22,7 @@ import {MatDividerModule} from '@angular/material/divider';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    // Material UI - Modules
-    MatButtonModule,
-    MatCardModule,
-    MatIconModule,
-    MatTooltipModule,
-    MatSlideToggleModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatGridListModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatDividerModule
-  ],
-  exports:[   
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,    
+
     // Material UI - Modules
     MatButtonModule,
     MatCardModule,
@@ -51,8 +35,27 @@ import {MatDividerModule} from '@angular/material/divider';
     MatInputModule,
     MatFormFieldModule,
     MatDividerModule,
+    MatChipsModule
+  ],
+  exports:[   
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,  
+    SharedComponent,
 
-    SharedComponent
+    // Material UI - Modules
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
+    MatTooltipModule,
+    MatSlideToggleModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatGridListModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatDividerModule,
+    MatChipsModule
   ]
 })
 export class SharedModule { }

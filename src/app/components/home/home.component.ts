@@ -1,32 +1,35 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { GLOBALS_PATH } from '@src/app/shared/enums/globals-path.enum';
+import { Component, OnInit } from '@angular/core';
+import { SpotifyService } from '@src/app/core/spotify.service';
+import { LOCAL_STORAGE_KEY } from '@src/app/shared/enums/local-storage-key.enum';
+import { AlbumItemSpotify, ReleaseSpotify, TokenSpotify } from '@src/app/shared/interface/spotify.interface';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent {
-  public apps:any =[
-    {
-      title:'SPA',
-      subtitle:'single page application',
-      imgPath:'../../assets/img/angular_spa_app.jpg',
-      imgLogoPath:'../../assets/img/angular_spa_app_logo.jpg',
-      description:'A single-page application is a type of web application that loads a single initial page from the server and then dynamically updates its content, through user interactions, without the need to load additional pages from the server.',
-      href: GLOBALS_PATH.SPA
-    }
-  ]
+export class HomeComponent implements OnInit {
 
-  public constructor(){}
+  public songs:AlbumItemSpotify[];
+  private token:TokenSpotify;
 
-  public navigateToApps(urlPath:string){
-    setTimeout(() => {      
-      //window.open(GLOBALS_PATH.SPA, '_blank')
-      window.location.href = urlPath
-    }, 100);
+  public constructor(private spotifyService:SpotifyService){}
+
+  ngOnInit() {
+    this.getLocalStorageTokenSpotify();
+    this.getNewReleases();    
+  }  
+
+  private getNewReleases(){
+    this.spotifyService.getNewReleases(this.token).subscribe( (response:ReleaseSpotify) =>{
+      this.songs=response.albums.items;
+    })
   }
 
-
+  private getLocalStorageTokenSpotify(){
+    const LocalStorageTokenSpotify = window.localStorage.getItem(LOCAL_STORAGE_KEY.TOKEN_SPOTIFY);
+    if(LocalStorageTokenSpotify){
+      this.token= JSON.parse(LocalStorageTokenSpotify);
+    }
+  }
 }

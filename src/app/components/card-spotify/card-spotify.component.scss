@@ -1,0 +1,44 @@
+:host ::ng-deep{
+    .mat-mdc-card-content {
+        padding: 16px;
+    }
+}
+.cardElement {
+    flex: 1 0 21%; /* explanation below */
+    margin: 8px;
+    max-width:360px;
+    cursor: pointer;
+}
+.card-header-image {
+    background-size: cover;
+}
+.wrapper {
+    padding: 20px;
+    max-width: 400px;
+}
+  
+.wrapper-overflow {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    
+    // Use for lines tipe paraphre text <p>
+    // line-height:1.5em;  
+    // min-height:4.5em;
+
+    // Use for lines tipe objects <chips>
+    line-height:2em;
+    min-height:8em;
+}
+
+.wrapper-title {
+    max-width: 400px;
+}
+
+.wrapper-title-overflow {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}

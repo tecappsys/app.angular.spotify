@@ -12,8 +12,8 @@ const routes: Routes = [{
       pathMatch:'full',      
       component:HomeComponent,
       data:{
-        entity:'Portfolio',
-        title:'Angular'
+        entity:'Spotify',
+        title:'New songs'
       }
     },
     
