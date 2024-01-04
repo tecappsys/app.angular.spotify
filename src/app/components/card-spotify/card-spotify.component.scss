@@ -7,7 +7,6 @@
     flex: 1 0 21%; /* explanation below */
     margin: 8px;
     max-width:360px;
-    cursor: pointer;
 }
 .card-header-image {
     background-size: cover;
@@ -41,4 +40,8 @@
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
+}
+
+.button-artist{
+    margin: 6px;
 }

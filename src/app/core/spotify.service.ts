@@ -2,7 +2,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '@src/environments/environment';
-import { ReleaseSpotify, TokenSpotify } from '../shared/interface/spotify.interface';
+import { ArtistSpotify, ReleaseSpotify, TokenSpotify } from '../shared/interface/spotify.interface';
 import { Observable } from 'rxjs';
 @Injectable()
 export class SpotifyService {
@@ -19,6 +19,11 @@ export class SpotifyService {
     return this.getRequest(uri,token) as Observable<ReleaseSpotify>;
   }
 
+  getArtist( id:string,token:TokenSpotify ) {
+    const uri = `/artists/${ id }`;
+    return this.getRequest(uri,token) as Observable<ArtistSpotify>;
+  }
+
   private getRequest( query: string, token:TokenSpotify) {
     const url = `${environment.api_spotify}${ query }`;
     const headers = new HttpHeaders({
@@ -31,13 +36,6 @@ export class SpotifyService {
 
   //   return this.getQuery(`search?q=${ termino }&type=artist&limit=15`)
   //               .pipe( map( data => data['artists'].items));
-
-  // }
-
-  // getArtist( id: string ) {
-
-  //   return this.getQuery(`artists/${ id }`);
-  //               // .pipe( map( data => data['artists'].items));
 
   // }
 

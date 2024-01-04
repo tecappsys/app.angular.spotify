@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div *ngFor="let song of songs" class="col-3">
-      <app-card-spotify [song]="song"></app-card-spotify>
+      <app-card-spotify [song]="song" (songSelected)="onSongSelected($event)" (artistSelected)="onArtistSelected($event)"></app-card-spotify>
     </div>    
   </div>
 </div>

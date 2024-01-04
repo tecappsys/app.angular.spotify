@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main.component';
 import { HomeComponent } from '../components/home/home.component';
+import { ArtistComponent } from '../components/artist/artist.component';
 
 const routes: Routes = [{
   path: '',
@@ -15,6 +16,15 @@ const routes: Routes = [{
         entity:'Spotify',
         title:'New songs'
       }
+    },
+    {
+      path:'artist/:id',
+      pathMatch:'full',      
+      component:ArtistComponent,
+      data:{
+        entity:'Artist',
+      }
+      
     },
     
     { path: '**', pathMatch: 'full', redirectTo: '' }

@@ -11,6 +11,9 @@ import { SpotifyService } from '../core/spotify.service';
 import { CardSpotifyComponent } from '../components/card-spotify/card-spotify.component';
 import { NoimagePipe } from '../pipes/noimage.pipe';
 import { DomseguroPipe } from '../pipes/domseguro.pipe';
+import { RouteUrlService } from '../core/route-url.service';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { SpinnerService } from '../core/spinner.service';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,7 @@ import { DomseguroPipe } from '../pipes/domseguro.pipe';
     CardSpotifyComponent,    
     NoimagePipe,
     DomseguroPipe,
+    SpinnerComponent,
   ],
   imports: [
     MainRoutingModule,
@@ -31,6 +35,8 @@ import { DomseguroPipe } from '../pipes/domseguro.pipe';
     MainComponent
   ],
   providers:[
+    RouteUrlService,
+    SpinnerService,    
     SpotifyService
   ],
 })

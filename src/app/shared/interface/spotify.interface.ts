@@ -41,8 +41,16 @@ export interface ArtistSpotify{
     name: string;
     type: string;
     uri: string;
+    genres?:string[];
+    images?:ImagesSpotify[];
+    popularity?:number;
+    followers?:ArtistFollowersSpotify
 };
 
+export interface ArtistFollowersSpotify{
+    href:string;
+    total:number
+};
 export interface ExternalUrlSpotify{
     spotify:string;
 };

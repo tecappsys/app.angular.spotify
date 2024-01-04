@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { ActivatedRouteSnapshot, ActivationEnd, Router } from '@angular/router';
+import { RouteUrlService } from '@src/app/core/route-url.service';
 
 @Component({
   selector: 'app-toolbar',
@@ -12,16 +13,25 @@ export class ToolbarComponent {
   public searchText = new FormControl(''); 
   public entity:string;
   public title:string;
+  public show:boolean;
   public urlBack:string;
   private snapshot: ActivatedRouteSnapshot;
   private URL_SEARCH:string = '/search/';
 
-  constructor( private router:Router ) { 
+  constructor( private router:Router, private routeUrlService: RouteUrlService ) { 
     this.router.events.subscribe( (event) =>{
       if(event instanceof ActivationEnd){
         this.snapshot = event.snapshot;
         this.initData(this.snapshot)
       }
+    })
+
+    this.routeUrlService.title$.subscribe((title)=>{
+      this.title=title;
+    })
+
+    this.routeUrlService.show$.subscribe((show)=>{
+      this.show=show;
     })
   }
 

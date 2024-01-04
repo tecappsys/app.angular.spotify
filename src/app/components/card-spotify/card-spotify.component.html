@@ -1,4 +1,4 @@
-<mat-card class="cardElement" (click)="onClick(song)">
+<mat-card class="cardElement">
     <mat-card-header class="wrapper-title">
         <div mat-card-avatar class="card-header-image" [ngStyle]="{'background-image':'url('+getThumbnail(song.images)+')'}"></div>
         <mat-card-title class="wrapper-title-overflow">{{song.name}}</mat-card-title>
@@ -9,7 +9,7 @@
         <p class="wrapper-overflow">
             <span>Artists</span>
             <mat-chip-set>
-                <mat-chip *ngFor="let artist of song.artists">
+                <mat-chip *ngFor="let artist of song.artists" (click)="onArtistSelected(artist)">
                     {{artist.name}}
                 </mat-chip>
             </mat-chip-set>
