@@ -1,0 +1,38 @@
+.card-header-image {
+    background-size: cover;
+}
+
+.artist-header{
+    display: flex;
+    padding-bottom: 24px;
+}
+
+img.avatar{
+    height:200px;
+    width:200px;
+    border-radius:50%;
+    vertical-align: middle;
+}
+
+.artist-header-info{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    padding-left: 2em;
+}
+
+.artist-header-genre{
+    display: flex;
+    gap: .5em
+}
+
+.artist-header-icons{
+    display: flex;
+    align-items:center;
+    gap: 1em;
+}
+
+.icon-display {
+    transform: scale(1.5);
+ }

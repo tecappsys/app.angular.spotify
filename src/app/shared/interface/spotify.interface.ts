@@ -32,6 +32,7 @@ export interface AlbumItemSpotify{
     available_markets:string[];
     external_urls:ExternalUrlSpotify;
     images:ImagesSpotify[];
+    is_playable: boolean,
 };
 
 export interface ArtistSpotify{
@@ -41,10 +42,10 @@ export interface ArtistSpotify{
     name: string;
     type: string;
     uri: string;
-    genres?:string[];
-    images?:ImagesSpotify[];
-    popularity?:number;
-    followers?:ArtistFollowersSpotify
+    genres:string[];
+    images:ImagesSpotify[];
+    popularity:number;
+    followers:ArtistFollowersSpotify
 };
 
 export interface ArtistFollowersSpotify{
@@ -55,6 +56,10 @@ export interface ExternalUrlSpotify{
     spotify:string;
 };
 
+export interface ExternalIdsSpotify{
+    isrc:string;
+};
+
 export interface AvailableMarketsSpotify{
     spotify:string;
 };
@@ -63,4 +68,28 @@ export interface ImagesSpotify{
     height: number;
     url: string;
     width: number;
+};
+
+export interface TracksSpotify{
+    tracks: TrackSpotify[];
+};
+
+export interface TrackSpotify{
+    album: AlbumItemSpotify;
+    artists:ArtistSpotify[];
+    disc_number: number,
+    duration_ms: number,
+    explicit: boolean,
+    external_urls:ExternalUrlSpotify;
+    external_ids:ExternalIdsSpotify;
+    href:string;
+    id: string,
+    is_local: boolean,
+    is_playable: boolean,
+    name: string,
+    popularity: number,
+    preview_url: string,
+    track_number: number,
+    type: string,
+    uri: string
 };

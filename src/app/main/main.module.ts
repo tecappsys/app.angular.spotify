@@ -14,6 +14,8 @@ import { DomseguroPipe } from '../pipes/domseguro.pipe';
 import { RouteUrlService } from '../core/route-url.service';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SpinnerService } from '../core/spinner.service';
+import { GenericTableComponent } from '../components/generic-table/generic-table.component';
+import { ArtistComponent } from '../components/artist/artist.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { SpinnerService } from '../core/spinner.service';
     NoimagePipe,
     DomseguroPipe,
     SpinnerComponent,
+    GenericTableComponent,    
+    ArtistComponent,
   ],
   imports: [
     MainRoutingModule,

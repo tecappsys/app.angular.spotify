@@ -12,8 +12,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatChipsModule} from '@angular/material/chips';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatChipsModule } from '@angular/material/chips';
+import {MatTableModule} from '@angular/material/table';
 @NgModule({
   declarations: [
     SharedComponent
@@ -35,7 +36,8 @@ import {MatChipsModule} from '@angular/material/chips';
     MatInputModule,
     MatFormFieldModule,
     MatDividerModule,
-    MatChipsModule
+    MatChipsModule,
+    MatTableModule
   ],
   exports:[   
     HttpClientModule,
@@ -55,7 +57,8 @@ import {MatChipsModule} from '@angular/material/chips';
     MatInputModule,
     MatFormFieldModule,
     MatDividerModule,
-    MatChipsModule
+    MatChipsModule,
+    MatTableModule
   ]
 })
 export class SharedModule { }

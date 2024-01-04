@@ -1,1 +1,20 @@
-<p>artist works!</p>
+<section *ngIf="artist">
+  <div class="artist-header">
+    <img class="avatar" [src]="artist.images[0].url">    
+    <div class="artist-header-info">
+        <div class="artist-header-genre">
+          <button *ngFor="let genre of artist.genres" mat-stroked-button>{{genre | titlecase}}</button>
+        </div>
+        <div class="artist-header-icons">
+          <mat-icon class="icon-display">person_pin</mat-icon>
+          <span >{{artist.followers.total}}</span>
+        </div>
+        <div class="artist-header-icons">
+          <mat-icon class="icon-display">stars</mat-icon>
+          <span >{{artist.popularity}}</span>
+        </div>  
+    </div>
+  </div>
+  
+  <app-generic-table [tableDataSource]="tracks" [displayedColumns]="displayedColumns"></app-generic-table>
+</section>

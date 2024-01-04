@@ -22,7 +22,8 @@ const routes: Routes = [{
       pathMatch:'full',      
       component:ArtistComponent,
       data:{
-        entity:'Artist',
+        entity:'Artist',        
+        urlBack:'/'
       }
       
     },
