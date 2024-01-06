@@ -9,12 +9,11 @@ import { RouteUrlService } from '@src/app/core/route-url.service';
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent {
-
-  public searchText = new FormControl(''); 
+ 
   public entity:string;
   public title:string;
-  public show:boolean;
-  public urlBack:string;
+  public showBackView:boolean;
+  public urlBackView:string;
   private snapshot: ActivatedRouteSnapshot;
   private URL_SEARCH:string = '/search/';
 
@@ -29,10 +28,6 @@ export class ToolbarComponent {
     this.routeUrlService.title$.subscribe((title)=>{
       this.title=title;
     })
-
-    this.routeUrlService.show$.subscribe((show)=>{
-      this.show=show;
-    })
   }
 
   public initData(snapshot:ActivatedRouteSnapshot){
@@ -42,18 +37,13 @@ export class ToolbarComponent {
     if(entity || title){
       this.entity = entity;
       this.title = this.getTitle(title);
-      this.urlBack = this.getUrlBack(snapshot);
+      this.urlBackView = this.getUrlBack(snapshot);
+      this.showBackView = this.urlBackView ? true : false;
     }
   }
 
-  public buscarHeroe(){
-    const text = this.searchText.getRawValue();
-    this.searchText.reset();
-    this.router.navigate( [`${this.URL_SEARCH}${text ? text : ''}`] );
-  }
-
-  public backView(){
-    this.router.navigate([this.urlBack])
+  public onBackView(){
+    this.router.navigate([this.urlBackView])
   }
 
   private getUrlBack(snapshot:ActivatedRouteSnapshot):string{
@@ -71,4 +61,7 @@ export class ToolbarComponent {
     return title  
   }
 
+  public onSearch(search:string){
+    this.router.navigate( [`${this.URL_SEARCH}${search}`] ); 
+  }
 }

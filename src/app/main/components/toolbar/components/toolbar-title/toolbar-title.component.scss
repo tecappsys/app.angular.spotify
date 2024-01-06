@@ -1,0 +1,20 @@
+.title-content{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+}
+.breadcrub{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: transparent;
+    padding-left: 8px;
+    .title{
+        font-size: x-large;
+        font-weight: 500;
+    }
+    .sub-title{
+        font-size: large;
+    }
+}

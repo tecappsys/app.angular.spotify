@@ -16,6 +16,8 @@ import { ArtistComponent } from '../components/artist/artist.component';
 import { GenericTableComponent } from '../shared/components/generic-table/generic-table.component';
 import { ArtistHeaderComponent } from '../components/artist/components/artist-header/artist-header.component';
 import { ArtistTrackCardComponent } from '../components/artist/components/artist-track-card/artist-track-card.component';
+import { ToolbarSearchComponent } from './components/toolbar/components/toolbar-search/toolbar-search.component';
+import { ToolbarTitleComponent } from './components/toolbar/components/toolbar-title/toolbar-title.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { ArtistTrackCardComponent } from '../components/artist/components/artist
     ArtistComponent,    
     ArtistHeaderComponent,
     ArtistTrackCardComponent,
-    GenericTableComponent
+    GenericTableComponent,
+    ToolbarSearchComponent,
+    ToolbarTitleComponent
   ],
   imports: [
     MainRoutingModule,
