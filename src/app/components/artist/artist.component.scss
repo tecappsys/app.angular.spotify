@@ -1,38 +1,32 @@
-.card-header-image {
-    background-size: cover;
-}
+@import "../../../sass/varialbe";
 
-.artist-header{
+.container-mobile-track{
     display: flex;
-    padding-bottom: 24px;
-}
-
-img.avatar{
-    height:200px;
-    width:200px;
-    border-radius:50%;
-    vertical-align: middle;
-}
-
-.artist-header-info{
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
     justify-content: center;
-    padding-left: 2em;
 }
 
-.artist-header-genre{
-    display: flex;
-    gap: .5em
+.container-generic-table{
+    margin-top: 24px;
 }
 
-.artist-header-icons{
-    display: flex;
-    align-items:center;
-    gap: 1em;
+:host ::ng-deep .mat-column-photo{
+    flex: 0.2;
 }
 
-.icon-display {
-    transform: scale(1.5);
- }
+:host ::ng-deep .mat-column-album{
+    flex: 0.3;
+}
+
+:host ::ng-deep .mat-column-song{
+    flex: 0.3;
+}
+
+@media only screen and (min-width: $media-breakpoint-lg) {    
+    
+    :host ::ng-deep .mat-column-song{
+        flex: 1;
+    }
+    :host ::ng-deep .mat-column-album{
+        flex: .5;
+    }
+}

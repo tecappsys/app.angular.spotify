@@ -7,7 +7,6 @@ import { MatSort } from '@angular/material/sort';
   templateUrl: './generic-table.component.html',
   styleUrls: ['./generic-table.component.scss']
 })
-
 export class GenericTableComponent {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -61,5 +60,3 @@ export class GenericTableComponent {
     return (displayColumns[col] && displayColumns[col].iframe);
   }
 }
-
-

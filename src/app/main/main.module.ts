@@ -9,13 +9,13 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { HomeComponent } from '../components/home/home.component';
 import { SpotifyService } from '../core/spotify.service';
 import { CardSpotifyComponent } from '../components/card-spotify/card-spotify.component';
-import { NoimagePipe } from '../pipes/noimage.pipe';
-import { DomseguroPipe } from '../pipes/domseguro.pipe';
 import { RouteUrlService } from '../core/route-url.service';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { SpinnerService } from '../core/spinner.service';
-import { GenericTableComponent } from '../components/generic-table/generic-table.component';
 import { ArtistComponent } from '../components/artist/artist.component';
+import { GenericTableComponent } from '../shared/components/generic-table/generic-table.component';
+import { ArtistHeaderComponent } from '../components/artist/components/artist-header/artist-header.component';
+import { ArtistTrackCardComponent } from '../components/artist/components/artist-track-card/artist-track-card.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +23,12 @@ import { ArtistComponent } from '../components/artist/artist.component';
     NavbarComponent,
     ToolbarComponent,    
     HomeComponent,
-    CardSpotifyComponent,    
-    NoimagePipe,
-    DomseguroPipe,
-    SpinnerComponent,
-    GenericTableComponent,    
-    ArtistComponent,
+    CardSpotifyComponent,  
+    SpinnerComponent,  
+    ArtistComponent,    
+    ArtistHeaderComponent,
+    ArtistTrackCardComponent,
+    GenericTableComponent
   ],
   imports: [
     MainRoutingModule,

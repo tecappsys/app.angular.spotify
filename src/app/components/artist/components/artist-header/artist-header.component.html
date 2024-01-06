@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2 col-sm-12">
+          <div class="artist-header-img">
+            <img class="avatar" [src]="artist.images[0].url">
+          </div>         
+        </div>
+        <div class="col-lg-10 col-sm-12">
+          <div class="content-artist-description">
+            <div class="artist-header-genre">
+              <mat-chip *ngFor="let genre of artist.genres"> {{genre | titlecase}} </mat-chip>
+            </div>
+            <div class="artist-header-info">
+              <mat-chip>
+                <mat-icon matChipAvatar class="icon-display">person_pin</mat-icon>
+                {{artist.followers.total}}
+              </mat-chip>
+            </div>
+            <div class="artist-header-info">
+              <mat-chip>
+                <mat-icon matChipAvatar class="icon-display">stars</mat-icon>
+                {{artist.popularity}}
+              </mat-chip>
+            </div> 
+          </div>
+        </div>
+    </div>
+</div>

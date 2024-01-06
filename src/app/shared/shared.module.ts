@@ -15,9 +15,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatChipsModule } from '@angular/material/chips';
 import {MatTableModule} from '@angular/material/table';
+import { GenericTableComponent } from './components/generic-table/generic-table.component';
+import { DomseguroPipe } from '../pipes/domseguro.pipe';
+import { NoimagePipe } from '../pipes/noimage.pipe';
 @NgModule({
   declarations: [
-    SharedComponent
+    SharedComponent,
+    NoimagePipe,
+    DomseguroPipe,
   ],
   imports: [   
     FormsModule,
@@ -43,6 +48,8 @@ import {MatTableModule} from '@angular/material/table';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,  
+    NoimagePipe,
+    DomseguroPipe,
     SharedComponent,
 
     // Material UI - Modules
