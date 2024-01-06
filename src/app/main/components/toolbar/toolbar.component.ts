@@ -62,6 +62,8 @@ export class ToolbarComponent {
   }
 
   public onSearch(search:string){
-    this.router.navigate( [`${this.URL_SEARCH}${search}`] ); 
+    if(typeof search === 'string'){
+      this.router.navigate( [`${this.URL_SEARCH}${search}`] );
+    }     
   }
 }

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { AlbumItemSpotify, ArtistSpotify, ImagesSpotify } from '@src/app/shared/interface/spotify.interface';
+import { SearchItemSpotify, ArtistSpotify, ImagesSpotify } from '@src/app/shared/interface/spotify.interface';
 
 @Component({
   selector: 'app-card-spotify',
@@ -7,9 +7,9 @@ import { AlbumItemSpotify, ArtistSpotify, ImagesSpotify } from '@src/app/shared/
   styleUrls: ['./card-spotify.component.scss']
 })
 export class CardSpotifyComponent {
-  @Output() public songSelected: EventEmitter<AlbumItemSpotify> = new EventEmitter();
+  @Output() public songSelected: EventEmitter<SearchItemSpotify> = new EventEmitter();
   @Output() public artistSelected: EventEmitter<ArtistSpotify> = new EventEmitter();
-  @Input() song:AlbumItemSpotify;
+  @Input() song:SearchItemSpotify;
   
 
   public onSongSelected(){

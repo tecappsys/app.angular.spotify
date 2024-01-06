@@ -4,21 +4,22 @@ export interface TokenSpotify{
     expires_in: number;
 };
 
-export interface ReleaseSpotify{
-    albums: AlbumSpotify;
+export interface Spotify{
+    albums: SearchSpotify;
+    artists: SearchSpotify;
 };
 
-export interface AlbumSpotify{
+export interface SearchSpotify{
     href: string;
     limit:number;
     next:string;
     offset:string;
     previous:string;
     total:number;
-    items:AlbumItemSpotify[];
+    items:SearchItemSpotify[];
 };
 
-export interface AlbumItemSpotify{
+export interface SearchItemSpotify{
     id:string;
     name:string;
     album_type: string;
@@ -75,7 +76,7 @@ export interface TracksSpotify{
 };
 
 export interface TrackSpotify{
-    album: AlbumItemSpotify;
+    album: SearchItemSpotify;
     artists:ArtistSpotify[];
     disc_number: number,
     duration_ms: number,

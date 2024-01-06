@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SpotifyService } from '@src/app/core/spotify.service';
 import { LOCAL_STORAGE_KEY } from '@src/app/shared/enums/local-storage-key.enum';
-import { AlbumItemSpotify, ArtistSpotify, ReleaseSpotify, TokenSpotify } from '@src/app/shared/interface/spotify.interface';
+import { SearchItemSpotify, ArtistSpotify, Spotify, TokenSpotify } from '@src/app/shared/interface/spotify.interface';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +11,7 @@ import { AlbumItemSpotify, ArtistSpotify, ReleaseSpotify, TokenSpotify } from '@
 })
 export class HomeComponent implements OnInit {
 
-  public songs:AlbumItemSpotify[];
+  public songs:SearchItemSpotify[];
   private token:TokenSpotify;
   private URL_ARTIST:string = '/artist/'
 
@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
     this.getNewReleases();    
   }  
 
-  public onSongSelected(song:AlbumItemSpotify){
+  public onSongSelected(song:SearchItemSpotify){
     this.router.navigate( [`${this.URL_ARTIST}${song.id}`] );
   }
 
@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
   }
 
   private getNewReleases(){
-    this.spotifyService.getNewReleases(this.token).subscribe( (response:ReleaseSpotify) =>{
+    this.spotifyService.getNewReleases(this.token).subscribe( (response:Spotify) =>{
       this.songs=response.albums.items;
     })
   }

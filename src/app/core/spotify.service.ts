@@ -2,7 +2,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '@src/environments/environment';
-import { ArtistSpotify, ReleaseSpotify, TokenSpotify, TracksSpotify } from '../shared/interface/spotify.interface';
+import { ArtistSpotify, Spotify, TokenSpotify, TracksSpotify } from '../shared/interface/spotify.interface';
 import { Observable } from 'rxjs';
 @Injectable()
 export class SpotifyService {
@@ -16,7 +16,7 @@ export class SpotifyService {
 
   public getNewReleases(token:TokenSpotify) {
     const uri = '/browse/new-releases?limit=20';
-    return this.getRequest(uri,token) as Observable<ReleaseSpotify>;
+    return this.getRequest(uri,token) as Observable<Spotify>;
   }
 
   public getArtist( id:string,token:TokenSpotify ) {
@@ -29,6 +29,11 @@ export class SpotifyService {
     return this.getRequest(uri,token) as Observable<TracksSpotify>;
   }
 
+  public getSearch( word: string,token:TokenSpotify ) {
+    const uri = `/search?q=${ word }&type=artist&limit=15`;
+    return this.getRequest(uri,token) as Observable<Spotify>;
+  }
+
   private getRequest( query: string, token:TokenSpotify) {
     const url = `${environment.api_spotify}${ query }`;
     const headers = new HttpHeaders({
@@ -36,19 +41,5 @@ export class SpotifyService {
     });
     return this.http.get(url, { headers });
   }
-
-  // getArtists( termino: string ) {
-
-  //   return this.getQuery(`search?q=${ termino }&type=artist&limit=15`)
-  //               .pipe( map( data => data['artists'].items));
-
-  // }
-
-  // getTopTracks( id: string ) {
-
-  //   return this.getQuery(`artists/${ id }/top-tracks?country=us`)
-  //               .pipe( map( data => data['tracks']));
-
-  // }
 
 }
