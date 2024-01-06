@@ -19,7 +19,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.getLocalStorageTokenSpotify();
-    this.getNewReleases();    
   }  
 
   public onSongSelected(song:SearchItemSpotify){
@@ -39,7 +38,18 @@ export class HomeComponent implements OnInit {
   private getLocalStorageTokenSpotify(){
     const LocalStorageTokenSpotify = window.localStorage.getItem(LOCAL_STORAGE_KEY.TOKEN_SPOTIFY);
     if(LocalStorageTokenSpotify){
-      this.token= JSON.parse(LocalStorageTokenSpotify);
+      this.token = JSON.parse(LocalStorageTokenSpotify);
+      this.getNewReleases();    
+    }else{
+      this.getToken()
     }
+  }
+
+  public getToken(){
+    this.spotifyService.getToken().subscribe( (token:TokenSpotify) =>{
+      window.localStorage.setItem(LOCAL_STORAGE_KEY.TOKEN_SPOTIFY,JSON.stringify(token))
+      this.token = token;
+      this.getNewReleases();    
+    })
   }
 }

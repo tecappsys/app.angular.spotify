@@ -22,7 +22,6 @@ export class MainComponent {
   }
 
   ngOnInit() {
-    this.getToken();
     this.intervalGetTokenSpotify();    
   }
 
