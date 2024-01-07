@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { SpinnerService } from '@src/app/core/spinner.service';
 import { SpotifyService } from '@src/app/core/spotify.service';
 import { LOCAL_STORAGE_KEY } from '@src/app/shared/enums/local-storage-key.enum';
 import { SearchItemSpotify, ArtistSpotify, Spotify, TokenSpotify } from '@src/app/shared/interface/spotify.interface';
@@ -14,15 +15,18 @@ export class HomeComponent implements OnInit {
   public songs:SearchItemSpotify[];
   private token:TokenSpotify;
   private URL_ARTIST:string = '/artist/'
+  private URL_ALBUM:string = '/album/'
 
-  public constructor(private spotifyService:SpotifyService,private router:Router){}
+  public constructor(private spotifyService:SpotifyService,private router:Router,private spinnerService:SpinnerService){    
+    this.spinnerService.showSpinner()
+  }
 
   ngOnInit() {
-    this.getLocalStorageTokenSpotify();
+    this.getToken()
   }  
 
-  public onSongSelected(song:SearchItemSpotify){
-    this.router.navigate( [`${this.URL_ARTIST}${song.id}`] );
+  public onSongSelected(song:string){
+    this.router.navigate( [`${this.URL_ALBUM}${song}`] );
   }
 
   public onArtistSelected(artist:ArtistSpotify){
@@ -32,17 +36,8 @@ export class HomeComponent implements OnInit {
   private getNewReleases(){
     this.spotifyService.getNewReleases(this.token).subscribe( (response:Spotify) =>{
       this.songs=response.albums.items;
+      this.spinnerService.hideSpinner();
     })
-  }
-
-  private getLocalStorageTokenSpotify(){
-    const LocalStorageTokenSpotify = window.localStorage.getItem(LOCAL_STORAGE_KEY.TOKEN_SPOTIFY);
-    if(LocalStorageTokenSpotify){
-      this.token = JSON.parse(LocalStorageTokenSpotify);
-      this.getNewReleases();    
-    }else{
-      this.getToken()
-    }
   }
 
   public getToken(){

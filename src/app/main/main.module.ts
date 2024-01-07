@@ -19,6 +19,8 @@ import { ArtistTrackCardComponent } from '../components/artist/components/artist
 import { ToolbarSearchComponent } from './components/toolbar/components/toolbar-search/toolbar-search.component';
 import { ToolbarTitleComponent } from './components/toolbar/components/toolbar-title/toolbar-title.component';
 import { SearchSpotifyComponent } from '../components/search-spotify/search-spotify.component';
+import { AlbumComponent } from '../components/album/album.component';
+import { AlbumTrackCardComponent } from '../components/album/components/album-track-card/album-track-card.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { SearchSpotifyComponent } from '../components/search-spotify/search-spot
     ArtistHeaderComponent,
     ArtistTrackCardComponent,    
     SearchSpotifyComponent,
+    AlbumComponent,    
+    AlbumTrackCardComponent,
   ],
   imports: [
     MainRoutingModule,

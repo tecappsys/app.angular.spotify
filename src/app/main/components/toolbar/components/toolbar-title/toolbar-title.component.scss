@@ -11,6 +11,13 @@
     background: transparent;
     padding-left: 8px;
     .title{
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        
+        line-height:1.5em;  
+    
         font-size: x-large;
         font-weight: 500;
     }

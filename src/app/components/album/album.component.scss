@@ -1,0 +1,19 @@
+.album-header-content{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    margin: 16px 0;
+}
+
+:host ::ng-deep .mat-column-duration_ms{
+    flex: 0.2;
+}
+
+:host ::ng-deep .mat-column-name{
+    flex: 0.4;
+}
+
+:host ::ng-deep .mat-column-artists{
+    flex: 0.4;
+}

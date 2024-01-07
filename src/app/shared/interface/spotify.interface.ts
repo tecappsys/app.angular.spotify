@@ -5,18 +5,18 @@ export interface TokenSpotify{
 };
 
 export interface Spotify{
-    albums: SearchSpotify;
-    artists: SearchSpotify;
+    albums: SearchSpotify<SearchItemSpotify>;
+    artists: SearchSpotify<SearchItemSpotify>;
 };
 
-export interface SearchSpotify{
+export interface SearchSpotify<T>{
     href: string;
     limit:number;
     next:string;
     offset:string;
     previous:string;
     total:number;
-    items:SearchItemSpotify[];
+    items:T[];
 };
 
 export interface SearchItemSpotify{
@@ -35,6 +35,45 @@ export interface SearchItemSpotify{
     images:ImagesSpotify[];
     is_playable: boolean,
 };
+
+export interface AlbumSpotify{
+    album_type: string;
+    total_tracks: number;
+    available_markets: string[];
+    external_urls: ExternalUrlSpotify;
+    href: string;
+    id: string;
+    images: ImagesSpotify[];
+    name: string;
+    release_date: string;
+    release_date_precision: string;
+    type: string;
+    uri: string;
+    artists:ArtistSpotify[];
+    tracks: SearchSpotify<AlbumTrackSpotify>,
+    external_ids: ExternalIdsSpotify;
+    genres: string[];
+    label: string;
+    popularity: number
+}
+
+export interface AlbumTrackSpotify{    
+    artists: ArtistSpotify[];
+    available_markets: string[];
+    disc_number: number;
+    duration_ms: number;
+    explicit: boolean;
+    external_urls: ExternalUrlSpotify;
+    href: string;
+    id: string;
+    is_playable: boolean;
+    name: string;
+    preview_url: string;
+    track_number: number;
+    type: string;
+    uri: string;
+    is_local: boolean;
+}
 
 export interface ArtistSpotify{
     external_urls: ExternalUrlSpotify;
@@ -59,6 +98,8 @@ export interface ExternalUrlSpotify{
 
 export interface ExternalIdsSpotify{
     isrc:string;
+    ean: string;
+    upc: string;
 };
 
 export interface AvailableMarketsSpotify{

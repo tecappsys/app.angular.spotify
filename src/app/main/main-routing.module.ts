@@ -4,6 +4,7 @@ import { MainComponent } from './main.component';
 import { HomeComponent } from '../components/home/home.component';
 import { ArtistComponent } from '../components/artist/artist.component';
 import { SearchSpotifyComponent } from '../components/search-spotify/search-spotify.component';
+import { AlbumComponent } from '../components/album/album.component';
 
 const routes: Routes = [{
   path: '',
@@ -32,6 +33,14 @@ const routes: Routes = [{
       component: SearchSpotifyComponent,
       data:{
         entity:'Search',
+        urlBack:'/'
+      } 
+    },     
+    { 
+      path: 'album/:id',
+      component: AlbumComponent,
+      data:{
+        entity:'Album',
         urlBack:'/'
       } 
     }, 

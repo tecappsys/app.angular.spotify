@@ -1,10 +1,12 @@
 <mat-card class="cardElement shadow-card">
-    <mat-card-header class="wrapper-title">
+    <mat-card-header class="wrapper-title" (click)="onSongSelected()">
         <div mat-card-avatar class="card-header-image" [ngStyle]="{'background-image':'url('+getThumbnail(song.images)+')'}"></div>
         <mat-card-title class="wrapper-title-overflow">{{song.name}}</mat-card-title>
-        <mat-card-subtitle class="wrapper-title-overflow">{{song.type}}</mat-card-subtitle>
+        <mat-card-subtitle class="wrapper-title-overflow">{{song.album_type | titlecase}}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image [src]="song.images | noimage" [alt]="song.name">
+    <div class="content-image">
+        <img mat-card-image [src]="song.images | noimage" [alt]="song.name" (click)="onSongSelected()">
+    </div>    
     <mat-card-content class="wrapper">
         <p class="wrapper-overflow">
             <span>Artists</span>

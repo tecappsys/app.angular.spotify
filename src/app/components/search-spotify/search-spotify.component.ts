@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SpinnerService } from '@src/app/core/spinner.service';
 import { SpotifyService } from '@src/app/core/spotify.service';
 import { LOCAL_STORAGE_KEY } from '@src/app/shared/enums/local-storage-key.enum';
 import { ImagesSpotify, SearchItemSpotify, Spotify, TokenSpotify } from '@src/app/shared/interface/spotify.interface';
@@ -14,7 +15,9 @@ export class SearchSpotifyComponent {
   private URL_ARTIST:string = '/artist/';
   private token:TokenSpotify;
 
-  constructor(private spotifyService:SpotifyService, private router:Router, public activatedRoute:ActivatedRoute) {}
+  constructor(private spotifyService:SpotifyService, private router:Router, public activatedRoute:ActivatedRoute, private spinnerService:SpinnerService) {
+    this.spinnerService.showSpinner()
+  }
 
   ngOnInit() {
     this.getLocalStorageTokenSpotify();
@@ -26,7 +29,8 @@ export class SearchSpotifyComponent {
 
   public getArtists(search:string){
     this.spotifyService.getSearch(search,this.token).subscribe( (response:Spotify) =>{
-      this.artists = response.artists.items
+      this.artists = response.artists.items;
+      this.spinnerService.hideSpinner();
     })
   }
 

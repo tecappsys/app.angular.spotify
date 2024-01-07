@@ -7,13 +7,13 @@ import { SearchItemSpotify, ArtistSpotify, ImagesSpotify } from '@src/app/shared
   styleUrls: ['./card-spotify.component.scss']
 })
 export class CardSpotifyComponent {
-  @Output() public songSelected: EventEmitter<SearchItemSpotify> = new EventEmitter();
+  @Output() public songSelected: EventEmitter<string> = new EventEmitter();
   @Output() public artistSelected: EventEmitter<ArtistSpotify> = new EventEmitter();
   @Input() song:SearchItemSpotify;
   
 
   public onSongSelected(){
-    this.songSelected.emit( this.song );
+    this.songSelected.emit( this.song.id );
   }
 
   public onArtistSelected(artist:ArtistSpotify){
