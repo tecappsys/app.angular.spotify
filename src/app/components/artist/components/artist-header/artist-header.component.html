@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-lg-2 col-sm-12">
           <div class="artist-header-img">
-            <img class="avatar" [src]="artist.images[0].url">
+            <img class="avatar" [src]="artist.images | noimage">
           </div>         
         </div>
         <div class="col-lg-10 col-sm-12">

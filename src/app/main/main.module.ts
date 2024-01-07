@@ -24,15 +24,18 @@ import { AlbumTrackCardComponent } from '../components/album/components/album-tr
 
 @NgModule({
   declarations: [
+    // BASE COMPONENTS
     MainComponent,
     NavbarComponent,
     ToolbarComponent,    
-    HomeComponent,
-    GenericTableComponent,
     ToolbarSearchComponent,
     ToolbarTitleComponent,
+    SpinnerComponent,   
+    
+    // EXTRA COMPONENTS
+    HomeComponent,
+    GenericTableComponent,
     CardSpotifyComponent,  
-    SpinnerComponent,  
     ArtistComponent,    
     ArtistHeaderComponent,
     ArtistTrackCardComponent,    
