@@ -34,7 +34,7 @@ export class NavbarComponent {
 
   public navigateToHome(){
     setTimeout(() => {
-      window.location.href = environment.app_portal
+      window.location.href = environment.appHome
     }, 100);
   }
 
