@@ -35,7 +35,6 @@ export class SearchSpotifyComponent {
   }
 
   public artisSelected( artist:SearchItemSpotify ){
-    debugger
     this.router.navigate( [`${this.URL_ARTIST}${artist.id}`] );
   }
 
