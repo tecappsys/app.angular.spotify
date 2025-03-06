@@ -3,8 +3,8 @@
         <mat-icon>arrow_back</mat-icon>
     </button>
     <div class="breadcrub">
-        <span class="sub-title">{{entity}}</span>
-        <span class="title">{{title}}</span>
+        <span *ngIf="entity !== '' " class="sub-title">{{entity}}</span>
+        <span *ngIf="title !== '' " class="title">{{title}}</span>
     </div>  
 </div>
        

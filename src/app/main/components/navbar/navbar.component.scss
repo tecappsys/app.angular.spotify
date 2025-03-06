@@ -1,11 +1,12 @@
 :host ::ng-deep{
     .mat-toolbar-single-row{
-        min-height: 65px;
+        min-height: 70px;
+        border-radius: 13px;
     }
 }
 
-.navbar-spacer {
-    flex: 1 1 auto;
+.navbar{
+    margin-bottom: 24px;
 }
 
 .navbarLeft{

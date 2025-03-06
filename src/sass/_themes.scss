@@ -1,0 +1,10 @@
+@import 'variables';
+@import 'mixins';
+
+.light-mode {
+  @include theme(map-get($themes, light));
+}
+
+.dark-mode {
+  @include theme(map-get($themes, dark));
+}

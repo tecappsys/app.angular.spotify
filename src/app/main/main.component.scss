@@ -1,5 +1,8 @@
-.sidenav-router{
-    display: flex;
-    flex-direction: column;
-    height: calc(100% - 160px); // WHIT - toolbar
+.custom-container{
+    max-width: 1144px;
+    padding: 0 24px;
+}
+
+.section-router-outlet{
+    margin: 24px 0;
 }

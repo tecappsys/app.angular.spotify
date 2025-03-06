@@ -1,4 +1,4 @@
 export enum THEME_UI{
-    LIGHT='theme-light',
-    DARK='theme-dark',
+    LIGHT='light-mode',
+    DARK='dark-mode',
 }

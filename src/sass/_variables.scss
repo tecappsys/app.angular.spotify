@@ -1,0 +1,37 @@
+$media-breakpoint-xs: 0;
+$media-breakpoint-sm: 576px;
+$media-breakpoint-md: 768px;
+$media-breakpoint-lg: 992px;
+$media-breakpoint-xl: 1200px;
+$media-breakpoint-xxl: 1400px;
+
+$themes: (
+  light: (
+    primary: #1A9691,
+    secondary: #9EA3A6,      
+    primary-text: #111C2D,
+    secondary-text: #7C8FAC,
+    bw-text: #FFFFFF,
+    background-body: #f0f5f9,
+    background-card:#FFFFFF,    
+    border-card:transparent,
+    border-card-thumbnail:6px solid #FFFFFF,
+    border-mat-mdc:#9EA3A6,
+    box-shadow-card: "0px 2px 1px -1px rgba(0, 0, 0, 0.2),0px 1px 1px 0px rgba(0, 0, 0, 0.14),0px 1px 3px 0px rgba(0, 0, 0, 0.12)",
+    transparent: transparent,
+  ),
+  dark: (
+    primary: #c6d1e9,
+    secondary: #9EA3A6,
+    primary-text: #EAEFF4,
+    secondary-text: #c6d1e9,    
+    bw-text: #111C2D,
+    background-body: #15263a,
+    background-card:#111c2d,
+    border-card:1px solid rgb(51, 63, 85),
+    border-card-thumbnail:6px solid #111c2d,
+    border-mat-mdc:#9EA3A6,
+    box-shadow-card: "transparent",    
+    transparent: transparent,
+  )
+);

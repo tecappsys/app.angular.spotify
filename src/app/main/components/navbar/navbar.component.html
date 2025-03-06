@@ -1,8 +1,9 @@
 <mat-toolbar class="navbar">
     <div class="navbarLeft" (click)="navigateToHome()">
-        <svg-logo class="svg-logo-icon"></svg-logo>
+        <svg-logo-dark *ngIf="isDarkTheme" class="svg-logo-icon"></svg-logo-dark>
+        <svg-logo-light *ngIf="!isDarkTheme" class="svg-logo-icon"></svg-logo-light>
         <h1>TECAPPSYS</h1>
     </div>
-    <span class="navbar-spacer"></span>
-    <mat-slide-toggle #darkModeSwitch [formControl]="toggleControl">Theme</mat-slide-toggle>
+    <button *ngIf="isDarkTheme" mat-icon-button (click)="onChangeTheme()"><mat-icon>light_mode</mat-icon></button>
+    <button *ngIf="!isDarkTheme" mat-icon-button (click)="onChangeTheme()"><mat-icon>mode_night</mat-icon></button>
 </mat-toolbar>

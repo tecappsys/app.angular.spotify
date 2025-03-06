@@ -1,4 +1,13 @@
-@import "../../../sass/varialbe";
+@import "../../../sass/variables";
+
+.card-ui {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border-radius: 18px;
+    overflow: hidden;
+    margin: 24px 0;
+}
 
 .container-mobile-track{
     display: flex;
