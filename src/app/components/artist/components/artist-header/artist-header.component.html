@@ -9,23 +9,25 @@
           <div class="content-artist-description">
             <div class="artist-header-genre">
               <button *ngFor="let genre of artist.genres" class="button-primary">
-                <mat-chip> {{genre | titlecase}} </mat-chip>
+                <div class="button-content">
+                  <span>{{genre | titlecase}}</span>
+                </div>
               </button>
             </div>
             <div class="artist-header-info">
               <button class="button-primary">
-                <mat-chip>
+                <div class="button-content">
                   <mat-icon matChipAvatar class="icon-display">person_pin</mat-icon>
-                  {{artist.followers.total}}
-                </mat-chip>
+                  <span>{{artist.followers.total}}</span>
+                </div>
               </button>
             </div>
             <div class="artist-header-info">
               <button class="button-primary">
-                <mat-chip>
+                <div class="button-content">
                   <mat-icon matChipAvatar class="icon-display">stars</mat-icon>
-                  {{artist.popularity}}
-                </mat-chip>
+                  <span>{{artist.popularity}}</span>
+                </div>
               </button>
             </div> 
           </div>

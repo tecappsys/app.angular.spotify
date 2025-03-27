@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SpinnerService } from '@src/app/core/spinner.service';
 import { SpotifyService } from '@src/app/core/spotify.service';
-import { LOCAL_STORAGE_KEY } from '@src/app/shared/enums/local-storage-key.enum';
+import { LOCAL_STORAGE_KEY,SpinnerService,NoimagePipe } from '@tecappsys/library-angular';
 import { ImagesSpotify, SearchItemSpotify, Spotify, TokenSpotify } from '@src/app/shared/interface/spotify.interface';
 
 @Component({

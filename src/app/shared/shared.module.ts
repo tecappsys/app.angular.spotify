@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { SharedComponent } from './shared.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
@@ -14,16 +13,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatChipsModule } from '@angular/material/chips';
-import {MatTableModule} from '@angular/material/table';
-import { GenericTableComponent } from './components/generic-table/generic-table.component';
-import { DomseguroPipe } from '../pipes/domseguro.pipe';
-import { NoimagePipe } from '../pipes/noimage.pipe';
+import { MatTableModule } from '@angular/material/table';
+import { TecappsysModule } from '@tecappsys/library-angular';
+import { SharedComponent } from './shared.component';
 @NgModule({
-  declarations: [
-    SharedComponent,
-    NoimagePipe,
-    DomseguroPipe,
-  ],
   imports: [   
     FormsModule,
     HttpClientModule,
@@ -42,15 +35,14 @@ import { NoimagePipe } from '../pipes/noimage.pipe';
     MatFormFieldModule,
     MatDividerModule,
     MatChipsModule,
-    MatTableModule
+    MatTableModule,
+    SharedComponent
   ],
   exports:[   
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,  
-    NoimagePipe,
-    DomseguroPipe,
-    SharedComponent,
+    TecappsysModule,
 
     // Material UI - Modules
     MatButtonModule,
@@ -65,7 +57,9 @@ import { NoimagePipe } from '../pipes/noimage.pipe';
     MatFormFieldModule,
     MatDividerModule,
     MatChipsModule,
-    MatTableModule
+    MatTableModule,
+    TecappsysModule,
+    SharedComponent
   ]
 })
 export class SharedModule { }

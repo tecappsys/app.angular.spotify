@@ -1,9 +1,8 @@
 import { Component} from '@angular/core';
-import { THEME_UI } from '../shared/enums/theme-ui.enum';
-import { LOCAL_STORAGE_KEY } from '../shared/enums/local-storage-key.enum';
 import { TokenSpotify } from '../shared/interface/spotify.interface';
 import { SpotifyService } from '../core/spotify.service';
-import { ThemeService } from '../core/theme.service';
+import { Router } from '@angular/router';
+import { LOCAL_STORAGE_KEY,THEME_UI,ThemeService } from '@tecappsys/library-angular';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -12,8 +11,13 @@ import { ThemeService } from '../core/theme.service';
 export class MainComponent {
 
   public isDarkTheme:boolean;
-
-  public constructor(public themeService: ThemeService, private spotifyService:SpotifyService){}
+  private URL_SEARCH:string = '/search/';
+  
+  public constructor(    
+    private router:Router,
+    public themeService: ThemeService, 
+    private spotifyService:SpotifyService
+  ){}
 
   ngOnInit() {
     const currentTheme = window.localStorage.getItem(LOCAL_STORAGE_KEY.THEME_UI);
@@ -35,5 +39,15 @@ export class MainComponent {
     this.spotifyService.getToken().subscribe( (token:TokenSpotify) =>{
       window.localStorage.setItem(LOCAL_STORAGE_KEY.TOKEN_SPOTIFY,JSON.stringify(token))
     })
+  }
+
+  public onBackView(urlBackView:string){
+    this.router.navigate([urlBackView])
+  }
+
+  public onSearch(search:string){
+    if(typeof search === 'string'){
+      this.router.navigate( [`${this.URL_SEARCH}${search}`] );
+    }     
   }
 }

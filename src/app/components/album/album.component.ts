@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { RouteUrlService } from '@src/app/core/route-url.service';
-import { SpinnerService } from '@src/app/core/spinner.service';
 import { SpotifyService } from '@src/app/core/spotify.service';
-import { LOCAL_STORAGE_KEY } from '@src/app/shared/enums/local-storage-key.enum';
+import { LOCAL_STORAGE_KEY,SpinnerService,RouteUrlService,DateUtils } from '@tecappsys/library-angular';
 import { AlbumSpotify, AlbumTrackSpotify, ArtistSpotify, TokenSpotify } from '@src/app/shared/interface/spotify.interface';
-import { DateUtils } from '@src/app/shared/utils/date';
 
 @Component({
   selector: 'app-album',

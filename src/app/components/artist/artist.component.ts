@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { RouteUrlService } from '@src/app/core/route-url.service';
-import { SpinnerService } from '@src/app/core/spinner.service';
 import { SpotifyService } from '@src/app/core/spotify.service';
-import { LOCAL_STORAGE_KEY } from '@src/app/shared/enums/local-storage-key.enum';
+import { LOCAL_STORAGE_KEY,SpinnerService,RouteUrlService } from '@tecappsys/library-angular';
 import { ArtistSpotify, TokenSpotify, TrackSpotify, TracksSpotify } from '@src/app/shared/interface/spotify.interface';
 
 @Component({
