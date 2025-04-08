@@ -1,26 +1,22 @@
 
 <tecappsys-spinner></tecappsys-spinner>
 
-<div class="container-menu">
-  <tecappsys-sidebar [isDarkTheme]="isDarkTheme"></tecappsys-sidebar>
-</div>
+<tecappsys-sidebar [isDarkTheme]="isDarkTheme"></tecappsys-sidebar>
 
-<div class="container-content">
-  <div class="container custom-container">
-    <div>
-      <tecappsys-navbar (changeIsDarkTheme)="onChangeIsDarkTheme($event)" [isDarkTheme]="isDarkTheme"></tecappsys-navbar>
-  
-      <tecappsys-toolbar 
+<div class="tecappsys-main">
+  <div class="main-container">
+    <tecappsys-navbar 
+      [isDarkTheme]="isDarkTheme"
+      (changeIsDarkTheme)="onChangeIsDarkTheme($event)" 
+    ></tecappsys-navbar>
+
+    <tecappsys-toolbar 
         [isSearch]="true" 
         (search)="onSearch($event)"
         (backView)="onBackView($event)"
       ></tecappsys-toolbar>
-      
-      <section class="section-router-outlet">
-        <router-outlet></router-outlet> 
-      </section> 
-    </div>
-     
+    
+    <router-outlet class="main-body"></router-outlet> 
   </div>
 </div>
 
