@@ -1086,6 +1086,7 @@ class MainComponent {
     this.intervalGetTokenSpotify();
   }
   onChangeIsDarkTheme(isDarkTheme) {
+    this.isDarkTheme = isDarkTheme;
     this.themeService.toggleTheme(isDarkTheme ? _tecappsys_library_angular__WEBPACK_IMPORTED_MODULE_1__.THEME_UI.DARK : _tecappsys_library_angular__WEBPACK_IMPORTED_MODULE_1__.THEME_UI.LIGHT);
   }
   intervalGetTokenSpotify() {
