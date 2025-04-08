@@ -26,6 +26,7 @@ export class MainComponent {
   }
 
   public onChangeIsDarkTheme(isDarkTheme:boolean){
+    this.isDarkTheme = isDarkTheme;
     this.themeService.toggleTheme(isDarkTheme ? THEME_UI.DARK : THEME_UI.LIGHT);
   }
 
